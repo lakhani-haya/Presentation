@@ -55,6 +55,76 @@ class SmoothScrollAnimations {
                 element.style.opacity = '1';
             }, index * 100);
         });
+
+        // Special animation for snapshot section
+        if (section.classList.contains('about-section')) {
+            this.animateSnapshot(section);
+        }
+    }
+
+    animateSnapshot(section) {
+        const flags = section.querySelectorAll('.flag');
+        const plane = section.querySelector('.flying-plane');
+        const quote = section.querySelector('.main-quote p');
+
+        // Animate quote typing effect
+        if (quote && !quote.classList.contains('animated')) {
+            quote.classList.add('animated');
+            const text = quote.textContent;
+            quote.textContent = '';
+            this.typeText(quote, text, 50);
+        }
+
+        // Add interactive hover effects to flags
+        flags.forEach((flag, index) => {
+            flag.addEventListener('mouseenter', () => {
+                this.showCountryInfo(flag, index);
+            });
+            
+            flag.addEventListener('mouseleave', () => {
+                this.hideCountryInfo();
+            });
+        });
+
+        // Restart plane animation when section becomes visible
+        if (plane) {
+            plane.style.animation = 'none';
+            setTimeout(() => {
+                plane.style.animation = 'flyAcross 6s ease-in-out infinite';
+            }, 100);
+        }
+    }
+
+    showCountryInfo(flag, index) {
+        const countryInfo = [
+            { name: 'Pakistan', info: 'Born here - where my journey began' },
+            { name: 'Bosnia', info: 'Shaped by culture and resilience' },
+            { name: 'Oklahoma', info: 'Growing and thriving today' }
+        ];
+
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'country-tooltip';
+        tooltip.innerHTML = `
+            <strong>${countryInfo[index].name}</strong><br>
+            ${countryInfo[index].info}
+        `;
+        
+        flag.parentElement.appendChild(tooltip);
+        
+        // Position tooltip
+        setTimeout(() => {
+            tooltip.style.opacity = '1';
+            tooltip.style.transform = 'translateY(-10px)';
+        }, 50);
+    }
+
+    hideCountryInfo() {
+        const tooltips = document.querySelectorAll('.country-tooltip');
+        tooltips.forEach(tooltip => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => tooltip.remove(), 300);
+        });
     }
 
     setupScrollEffects() {
