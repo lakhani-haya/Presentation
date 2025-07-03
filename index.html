@@ -43,35 +43,30 @@
                     </div>
                     
                     <div class="journey-map">
-                        <div class="map-container">
-                            <!-- World Map with Image Background -->
-                            <div class="world-map">
-                                <!-- World map background image -->
-                                <div class="map-background"></div>
+                        <div class="flight-container">
+                            <!-- Clean flight path -->
+                            <svg viewBox="0 0 1000 200" class="flight-svg">
+                                <!-- Flight path: Pakistan → Bosnia → Oklahoma -->
+                                <path id="flight-path" 
+                                      d="M100 100 Q300 80 500 100 Q700 80 900 100" 
+                                      fill="none" 
+                                      stroke="var(--accent-pink)" 
+                                      stroke-width="3" 
+                                      stroke-dasharray="12,8"
+                                      opacity="0.8"/>
                                 
-                                <!-- SVG overlay for flight path and markers -->
-                                <svg viewBox="0 0 1000 500" class="map-overlay">
-                                    <!-- Flight path: Pakistan → Bosnia → Oklahoma -->
-                                    <path id="flight-path" 
-                                          d="M780 160 Q620 130 520 155 Q380 140 220 180" 
-                                          fill="none" 
-                                          stroke="var(--accent-pink)" 
-                                          stroke-width="4" 
-                                          stroke-dasharray="12,6"
-                                          opacity="1"/>
-                                    
-                                    <!-- Country markers -->
-                                    <circle cx="780" cy="160" r="10" fill="var(--accent-pink)" class="country-marker pakistan-marker" 
-                                            data-country="pakistan" stroke="#fff" stroke-width="3"/>
-                                    <circle cx="520" cy="155" r="10" fill="var(--accent-pink)" class="country-marker bosnia-marker" 
-                                            data-country="bosnia" stroke="#fff" stroke-width="3"/>
-                                    <circle cx="220" cy="180" r="10" fill="var(--accent-pink)" class="country-marker oklahoma-marker" 
-                                            data-country="oklahoma" stroke="#fff" stroke-width="3"/>
-                                </svg>
-                                
-                                <!-- Flying plane that follows the path -->
-                                <div class="flying-plane">✈️</div>
-                            </div>
+                                <!-- Country markers -->
+                                <circle cx="100" cy="100" r="8" fill="var(--accent-pink)" class="country-marker pakistan-marker" 
+                                        data-country="pakistan" stroke="#fff" stroke-width="2"/>
+                                <circle cx="500" cy="100" r="8" fill="var(--accent-pink)" class="country-marker bosnia-marker" 
+                                        data-country="bosnia" stroke="#fff" stroke-width="2"/>
+                                <circle cx="900" cy="100" r="8" fill="var(--accent-pink)" class="country-marker oklahoma-marker" 
+                                        data-country="oklahoma" stroke="#fff" stroke-width="2"/>
+                            </svg>
+                            
+                            <!-- Flying plane -->
+                            <div class="flying-plane">✈️</div>
+                        </div>
                             
                             <!-- Country information display -->
                             <div class="country-labels">
