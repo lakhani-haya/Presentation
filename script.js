@@ -66,6 +66,7 @@ class SmoothScrollAnimations {
         const flags = section.querySelectorAll('.flag');
         const plane = section.querySelector('.flying-plane');
         const quote = section.querySelector('.main-quote p');
+        const markers = section.querySelectorAll('.country-marker');
 
         // Animate quote typing effect
         if (quote && !quote.classList.contains('animated')) {
@@ -75,14 +76,23 @@ class SmoothScrollAnimations {
             this.typeText(quote, text, 50);
         }
 
-        // Add interactive hover effects to flags
+        // Add interactive hover effects to flags and markers
         flags.forEach((flag, index) => {
             flag.addEventListener('mouseenter', () => {
                 this.showCountryInfo(flag, index);
+                this.highlightMarker(markers[index]);
             });
             
             flag.addEventListener('mouseleave', () => {
                 this.hideCountryInfo();
+                this.unhighlightMarker(markers[index]);
+            });
+        });
+
+        // Add click events to markers
+        markers.forEach((marker, index) => {
+            marker.addEventListener('click', () => {
+                this.focusOnCountry(marker, index);
             });
         });
 
@@ -90,9 +100,63 @@ class SmoothScrollAnimations {
         if (plane) {
             plane.style.animation = 'none';
             setTimeout(() => {
-                plane.style.animation = 'flyAcross 6s ease-in-out infinite';
-            }, 100);
+                plane.style.animation = 'flyAlongPath 8s ease-in-out infinite';
+            }, 500);
         }
+    }
+
+    highlightMarker(marker) {
+        if (marker) {
+            marker.style.fill = 'var(--soft-pink)';
+            marker.style.transform = 'scale(1.5)';
+        }
+    }
+
+    unhighlightMarker(marker) {
+        if (marker) {
+            marker.style.fill = 'var(--accent-pink)';
+            marker.style.transform = 'scale(1)';
+        }
+    }
+
+    focusOnCountry(marker, index) {
+        const countryNames = ['Pakistan', 'Bosnia', 'Oklahoma'];
+        const countryDetails = [
+            'Where my journey began - rich culture and strong family values shaped my foundation.',
+            'Taught me resilience and adaptability - experiencing different perspectives broadened my world view.',
+            'Growing and thriving - building my career while embracing American opportunities and innovation.'
+        ];
+
+        // Create a modal or expanded view
+        const modal = document.createElement('div');
+        modal.className = 'country-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>${countryNames[index]}</h3>
+                <p>${countryDetails[index]}</p>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 50);
+
+        // Close modal functionality
+        const closeBtn = modal.querySelector('.close-modal');
+        closeBtn.addEventListener('click', () => {
+            modal.style.opacity = '0';
+            setTimeout(() => modal.remove(), 300);
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.opacity = '0';
+                setTimeout(() => modal.remove(), 300);
+            }
+        });
     }
 
     showCountryInfo(flag, index) {

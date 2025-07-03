@@ -44,23 +44,52 @@
                     
                     <div class="journey-map">
                         <div class="map-container">
-                            <div class="journey-path">
+                            <!-- World Map Outline -->
+                            <div class="world-map">
+                                <svg viewBox="0 0 1000 500" class="map-svg">
+                                    <!-- Simplified world map outline -->
+                                    <path d="M50 150 Q200 100 350 150 Q450 120 550 140 Q650 130 750 160 Q850 140 950 150 L950 350 Q850 320 750 340 Q650 350 550 330 Q450 340 350 320 Q200 340 50 320 Z" 
+                                          fill="none" 
+                                          stroke="rgba(255,255,255,0.2)" 
+                                          stroke-width="1"/>
+                                    
+                                    <!-- Flight path curve -->
+                                    <path id="flight-path" 
+                                          d="M200 280 Q400 200 600 250 Q700 230 800 270" 
+                                          fill="none" 
+                                          stroke="var(--accent-pink)" 
+                                          stroke-width="2" 
+                                          stroke-dasharray="5,5"
+                                          opacity="0.8"/>
+                                    
+                                    <!-- Country markers -->
+                                    <circle cx="200" cy="280" r="8" fill="var(--accent-pink)" class="country-marker" data-country="pakistan"/>
+                                    <circle cx="600" cy="250" r="8" fill="var(--accent-pink)" class="country-marker" data-country="bosnia"/>
+                                    <circle cx="800" cy="270" r="8" fill="var(--accent-pink)" class="country-marker" data-country="oklahoma"/>
+                                </svg>
+                                
+                                <!-- Flying plane that follows the path -->
+                                <div class="flying-plane">✈️</div>
+                            </div>
+                            
+                            <!-- Country information panels -->
+                            <div class="country-info-panel">
                                 <div class="country-stop" data-country="pakistan">
                                     <span class="flag">🇵🇰</span>
                                     <span class="country-name">Pakistan</span>
-                                    <div class="connection-line"></div>
+                                    <span class="country-detail">Born here</span>
                                 </div>
                                 <div class="country-stop" data-country="bosnia">
                                     <span class="flag">🇧🇦</span>
                                     <span class="country-name">Bosnia</span>
-                                    <div class="connection-line"></div>
+                                    <span class="country-detail">Shaped by</span>
                                 </div>
                                 <div class="country-stop" data-country="oklahoma">
                                     <span class="flag">🇺🇸</span>
                                     <span class="country-name">Oklahoma</span>
+                                    <span class="country-detail">Growing in</span>
                                 </div>
                             </div>
-                            <div class="flying-plane">✈️</div>
                         </div>
                     </div>
                 </div>
