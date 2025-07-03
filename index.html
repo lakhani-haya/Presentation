@@ -46,48 +46,106 @@
                         <div class="map-container">
                             <!-- World Map Outline -->
                             <div class="world-map">
-                                <svg viewBox="0 0 1000 500" class="map-svg">
-                                    <!-- Simplified world map outline -->
-                                    <path d="M50 150 Q200 100 350 150 Q450 120 550 140 Q650 130 750 160 Q850 140 950 150 L950 350 Q850 320 750 340 Q650 350 550 330 Q450 340 350 320 Q200 340 50 320 Z" 
-                                          fill="none" 
-                                          stroke="rgba(255,255,255,0.2)" 
-                                          stroke-width="1"/>
+                                <svg viewBox="0 0 1000 400" class="map-svg">
+                                    <!-- 3D Isometric continent blocks -->
+                                    <!-- North America Block -->
+                                    <g class="continent-block" id="north-america">
+                                        <polygon points="100,180 180,160 200,180 200,220 180,240 100,220" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="100,180 180,160 180,200 100,220" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="180,160 200,180 200,220 180,200" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
                                     
-                                    <!-- Flight path curve -->
+                                    <!-- Europe/Bosnia Block -->
+                                    <g class="continent-block" id="europe">
+                                        <polygon points="450,150 520,130 540,150 540,190 520,210 450,190" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="450,150 520,130 520,170 450,190" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="520,130 540,150 540,190 520,170" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
+                                    
+                                    <!-- Asia/Pakistan Block -->
+                                    <g class="continent-block" id="asia">
+                                        <polygon points="700,140 780,120 800,140 800,180 780,200 700,180" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="700,140 780,120 780,160 700,180" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="780,120 800,140 800,180 780,160" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
+                                    
+                                    <!-- Africa Block -->
+                                    <g class="continent-block" id="africa">
+                                        <polygon points="480,220 550,200 570,220 570,280 550,300 480,280" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="480,220 550,200 550,240 480,280" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="550,200 570,220 570,280 550,240" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
+                                    
+                                    <!-- South America Block -->
+                                    <g class="continent-block" id="south-america">
+                                        <polygon points="250,250 320,230 340,250 340,320 320,340 250,320" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="250,250 320,230 320,270 250,320" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="320,230 340,250 340,320 320,270" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
+                                    
+                                    <!-- Australia Block -->
+                                    <g class="continent-block" id="australia">
+                                        <polygon points="720,260 780,240 800,260 800,300 780,320 720,300" 
+                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="720,260 780,240 780,280 720,300" 
+                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
+                                        <polygon points="780,240 800,260 800,300 780,280" 
+                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+                                    </g>
+                                    
+                                    <!-- Curved flight path -->
                                     <path id="flight-path" 
-                                          d="M200 280 Q400 200 600 250 Q700 230 800 270" 
+                                          d="M750 150 Q600 100 495 140 Q350 120 150 170" 
                                           fill="none" 
                                           stroke="var(--accent-pink)" 
-                                          stroke-width="2" 
-                                          stroke-dasharray="5,5"
-                                          opacity="0.8"/>
+                                          stroke-width="3" 
+                                          stroke-dasharray="10,5"
+                                          opacity="1"/>
                                     
                                     <!-- Country markers -->
-                                    <circle cx="200" cy="280" r="8" fill="var(--accent-pink)" class="country-marker" data-country="pakistan"/>
-                                    <circle cx="600" cy="250" r="8" fill="var(--accent-pink)" class="country-marker" data-country="bosnia"/>
-                                    <circle cx="800" cy="270" r="8" fill="var(--accent-pink)" class="country-marker" data-country="oklahoma"/>
+                                    <circle cx="750" cy="150" r="8" fill="var(--accent-pink)" class="country-marker pakistan-marker" 
+                                            data-country="pakistan" stroke="#fff" stroke-width="2"/>
+                                    <circle cx="495" cy="140" r="8" fill="var(--accent-pink)" class="country-marker bosnia-marker" 
+                                            data-country="bosnia" stroke="#fff" stroke-width="2"/>
+                                    <circle cx="150" cy="170" r="8" fill="var(--accent-pink)" class="country-marker oklahoma-marker" 
+                                            data-country="oklahoma" stroke="#fff" stroke-width="2"/>
                                 </svg>
                                 
                                 <!-- Flying plane that follows the path -->
                                 <div class="flying-plane">✈️</div>
                             </div>
                             
-                            <!-- Country information panels -->
-                            <div class="country-info-panel">
-                                <div class="country-stop" data-country="pakistan">
-                                    <span class="flag">🇵🇰</span>
-                                    <span class="country-name">Pakistan</span>
-                                    <span class="country-detail">Born here</span>
+                            <!-- Country information display -->
+                            <div class="country-labels">
+                                <div class="country-label pakistan-label">
+                                    <div class="country-code">PK</div>
+                                    <div class="country-full-name">PAKISTAN</div>
+                                    <div class="country-subtitle">Born here</div>
                                 </div>
-                                <div class="country-stop" data-country="bosnia">
-                                    <span class="flag">🇧🇦</span>
-                                    <span class="country-name">Bosnia</span>
-                                    <span class="country-detail">Shaped by</span>
+                                <div class="country-label bosnia-label">
+                                    <div class="country-code">BA</div>
+                                    <div class="country-full-name">BOSNIA</div>
+                                    <div class="country-subtitle">Shaped by</div>
                                 </div>
-                                <div class="country-stop" data-country="oklahoma">
-                                    <span class="flag">🇺🇸</span>
-                                    <span class="country-name">Oklahoma</span>
-                                    <span class="country-detail">Growing in</span>
+                                <div class="country-label oklahoma-label">
+                                    <div class="country-code">US</div>
+                                    <div class="country-full-name">OKLAHOMA</div>
+                                    <div class="country-subtitle">Growing in</div>
                                 </div>
                             </div>
                         </div>

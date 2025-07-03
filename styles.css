@@ -269,19 +269,20 @@ body {
 
 .map-container {
     position: relative;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 105, 180, 0.1) 100%);
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    min-height: 400px;
+    min-height: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .world-map {
     position: relative;
     width: 100%;
-    height: 300px;
-    margin-bottom: 2rem;
+    height: 400px;
+    margin-bottom: 3rem;
 }
 
 .map-svg {
@@ -292,14 +293,33 @@ body {
     left: 0;
 }
 
+.continent-block {
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.continent-block:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+.continent-block polygon:first-child {
+    transition: var(--transition-fast);
+}
+
+.continent-block:hover polygon:first-child {
+    fill: #6a6a6a;
+}
+
 #flight-path {
-    stroke-dasharray: 10,5;
-    animation: dashMove 3s linear infinite;
+    stroke-dasharray: 15,8;
+    animation: dashMove 4s linear infinite;
+    filter: drop-shadow(0 0 8px var(--accent-pink));
 }
 
 @keyframes dashMove {
     to {
-        stroke-dashoffset: -15;
+        stroke-dashoffset: -23;
     }
 }
 
@@ -307,11 +327,12 @@ body {
     animation: pulse 2s ease-in-out infinite;
     cursor: pointer;
     transition: var(--transition-fast);
+    filter: drop-shadow(0 0 8px var(--accent-pink));
 }
 
 .country-marker:hover {
     r: 12;
-    fill: var(--soft-pink);
+    filter: drop-shadow(0 0 15px var(--accent-pink));
 }
 
 @keyframes pulse {
@@ -321,71 +342,64 @@ body {
     }
     50% {
         opacity: 0.7;
-        transform: scale(1.2);
+        transform: scale(1.3);
     }
 }
 
 .flying-plane {
     position: absolute;
-    font-size: 2rem;
-    z-index: 3;
-    animation: flyAlongPath 8s ease-in-out infinite;
-    filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.6));
+    font-size: 2.5rem;
+    z-index: 10;
+    animation: flyAlongPath 10s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(255, 105, 180, 0.8));
     transform-origin: center;
 }
 
 @keyframes flyAlongPath {
     0% {
-        left: 20%;
-        top: 56%;
-        transform: rotate(0deg);
+        left: 75%;
+        top: 37.5%;
+        transform: rotate(-135deg);
+        opacity: 0;
     }
-    25% {
-        left: 35%;
-        top: 45%;
-        transform: rotate(15deg);
+    10% {
+        opacity: 1;
     }
     50% {
-        left: 60%;
-        top: 50%;
-        transform: rotate(10deg);
+        left: 49.5%;
+        top: 35%;
+        transform: rotate(-15deg);
     }
-    75% {
-        left: 75%;
-        top: 48%;
-        transform: rotate(20deg);
+    90% {
+        opacity: 1;
     }
     100% {
-        left: 80%;
-        top: 54%;
-        transform: rotate(25deg);
+        left: 15%;
+        top: 42.5%;
+        transform: rotate(-10deg);
+        opacity: 0;
     }
 }
 
-.country-info-panel {
+.country-labels {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 2rem;
-    margin-top: 2rem;
+    gap: 2rem;
 }
 
-.country-stop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
+.country-label {
+    text-align: center;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
     flex: 1;
-    text-align: center;
 }
 
-.country-stop:nth-child(1) { animation-delay: 0.5s; }
-.country-stop:nth-child(2) { animation-delay: 1s; }
-.country-stop:nth-child(3) { animation-delay: 1.5s; }
+.country-label:nth-child(1) { animation-delay: 1s; }
+.country-label:nth-child(2) { animation-delay: 1.3s; }
+.country-label:nth-child(3) { animation-delay: 1.6s; }
 
 @keyframes fadeInUp {
     to {
@@ -394,83 +408,30 @@ body {
     }
 }
 
-.flag {
+.country-code {
     font-size: 2.5rem;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-    transition: var(--transition-fast);
-    cursor: pointer;
-}
-
-.flag:hover {
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 8px 16px rgba(255, 105, 180, 0.4));
-}
-
-.country-name {
-    font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary-white);
-    text-transform: uppercase;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.1em;
 }
 
-.country-detail {
-    font-size: 0.8rem;
+.country-full-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-white);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.15em;
+}
+
+.country-subtitle {
+    font-size: 0.9rem;
     color: var(--gray-light);
     font-style: italic;
+    font-weight: 300;
 }
 
-/* Map responsive adjustments */
-@media (max-width: 768px) {
-    .map-container {
-        padding: 2rem 1rem;
-        min-height: 300px;
-    }
-    
-    .world-map {
-        height: 200px;
-    }
-    
-    .country-info-panel {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-    
-    .country-stop {
-        width: 100%;
-    }
-    
-    @keyframes flyAlongPath {
-        0% {
-            left: 20%;
-            top: 60%;
-            transform: rotate(0deg);
-        }
-        25% {
-            left: 35%;
-            top: 50%;
-            transform: rotate(15deg);
-        }
-        50% {
-            left: 60%;
-            top: 55%;
-            transform: rotate(10deg);
-        }
-        75% {
-            left: 75%;
-            top: 53%;
-            transform: rotate(20deg);
-        }
-        100% {
-            left: 80%;
-            top: 58%;
-            transform: rotate(25deg);
-        }
-    }
-}
-
-/* Add floating particles effect */
+/* Add particles effect */
 .map-container::before {
     content: '';
     position: absolute;
@@ -479,12 +440,70 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 105, 180, 0.1) 2px, transparent 2px),
-        radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px, 30px 30px, 40px 40px;
-    animation: floatParticles 20s linear infinite;
+        radial-gradient(circle at 15% 25%, rgba(255, 105, 180, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 85% 75%, rgba(255, 105, 180, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 30% 80%, rgba(255, 105, 180, 0.08) 1px, transparent 1px);
+    background-size: 80px 80px, 60px 60px, 40px 40px, 100px 100px;
+    animation: floatParticles 25s linear infinite;
     pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .map-container {
+        padding: 2rem 1rem;
+        min-height: 400px;
+    }
+    
+    .world-map {
+        height: 300px;
+    }
+    
+    .country-labels {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .country-code {
+        font-size: 2rem;
+    }
+    
+    .country-full-name {
+        font-size: 1rem;
+    }
+    
+    .flying-plane {
+        font-size: 2rem;
+    }
+    
+    @keyframes flyAlongPath {
+        0% {
+            left: 75%;
+            top: 35%;
+            transform: rotate(-135deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        50% {
+            left: 49.5%;
+            top: 32%;
+            transform: rotate(-15deg);
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            left: 15%;
+            top: 40%;
+            transform: rotate(-10deg);
+            opacity: 0;
+        }
+    }
 }
 
 @keyframes floatParticles {
