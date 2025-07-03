@@ -46,84 +46,61 @@
                         <div class="map-container">
                             <!-- World Map Outline -->
                             <div class="world-map">
-                                <svg viewBox="0 0 1000 400" class="map-svg">
-                                    <!-- 3D Isometric continent blocks -->
-                                    <!-- North America Block -->
-                                    <g class="continent-block" id="north-america">
-                                        <polygon points="100,180 180,160 200,180 200,220 180,240 100,220" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="100,180 180,160 180,200 100,220" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="180,160 200,180 200,220 180,200" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                <svg viewBox="0 0 1000 500" class="map-svg">
+                                    <!-- Realistic World Map Silhouette -->
+                                    <!-- North America -->
+                                    <path d="M50 180 Q80 160 120 170 Q150 150 180 160 Q220 140 260 150 Q300 130 340 140 Q380 120 420 130 L420 200 Q400 220 380 210 Q340 230 300 220 Q260 240 220 230 Q180 250 120 240 Q80 260 50 250 Z
+                                             M160 100 Q180 80 200 90 Q220 70 240 80 Q260 60 280 70 L280 120 Q260 140 240 130 Q220 150 200 140 Q180 160 160 150 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- Europe/Bosnia Block -->
-                                    <g class="continent-block" id="europe">
-                                        <polygon points="450,150 520,130 540,150 540,190 520,210 450,190" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="450,150 520,130 520,170 450,190" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="520,130 540,150 540,190 520,170" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                    <!-- South America -->
+                                    <path d="M320 280 Q340 260 360 270 Q380 250 400 260 Q420 240 440 250 L440 380 Q420 400 400 390 Q380 410 360 400 Q340 420 320 410 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- Asia/Pakistan Block -->
-                                    <g class="continent-block" id="asia">
-                                        <polygon points="700,140 780,120 800,140 800,180 780,200 700,180" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="700,140 780,120 780,160 700,180" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="780,120 800,140 800,180 780,160" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                    <!-- Europe -->
+                                    <path d="M480 140 Q500 120 520 130 Q540 110 560 120 Q580 100 600 110 Q620 90 640 100 L640 180 Q620 200 600 190 Q580 210 560 200 Q540 220 520 210 Q500 230 480 220 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- Africa Block -->
-                                    <g class="continent-block" id="africa">
-                                        <polygon points="480,220 550,200 570,220 570,280 550,300 480,280" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="480,220 550,200 550,240 480,280" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="550,200 570,220 570,280 550,240" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                    <!-- Africa -->
+                                    <path d="M520 200 Q540 180 560 190 Q580 170 600 180 Q620 160 640 170 L640 320 Q620 340 600 330 Q580 350 560 340 Q540 360 520 350 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- South America Block -->
-                                    <g class="continent-block" id="south-america">
-                                        <polygon points="250,250 320,230 340,250 340,320 320,340 250,320" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="250,250 320,230 320,270 250,320" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="320,230 340,250 340,320 320,270" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                    <!-- Asia -->
+                                    <path d="M640 100 Q680 80 720 90 Q760 70 800 80 Q840 60 880 70 Q920 50 960 60 L960 200 Q920 220 880 210 Q840 230 800 220 Q760 240 720 230 Q680 250 640 240 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- Australia Block -->
-                                    <g class="continent-block" id="australia">
-                                        <polygon points="720,260 780,240 800,260 800,300 780,320 720,300" 
-                                                fill="#4a4a4a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="720,260 780,240 780,280 720,300" 
-                                                fill="#5a5a5a" stroke="#666" stroke-width="1"/>
-                                        <polygon points="780,240 800,260 800,300 780,280" 
-                                                fill="#3a3a3a" stroke="#666" stroke-width="1"/>
-                                    </g>
+                                    <!-- Australia -->
+                                    <path d="M750 320 Q780 300 810 310 Q840 290 870 300 L870 360 Q840 380 810 370 Q780 390 750 380 Z" 
+                                          fill="rgba(100,100,100,0.6)" 
+                                          stroke="rgba(150,150,150,0.8)" 
+                                          stroke-width="1"/>
                                     
-                                    <!-- Curved flight path -->
+                                    <!-- Flight path: Pakistan → Bosnia → Oklahoma -->
                                     <path id="flight-path" 
-                                          d="M750 150 Q600 100 495 140 Q350 120 150 170" 
+                                          d="M800 140 Q650 120 540 150 Q400 140 200 180" 
                                           fill="none" 
                                           stroke="var(--accent-pink)" 
-                                          stroke-width="3" 
-                                          stroke-dasharray="10,5"
+                                          stroke-width="4" 
+                                          stroke-dasharray="12,6"
                                           opacity="1"/>
                                     
                                     <!-- Country markers -->
-                                    <circle cx="750" cy="150" r="8" fill="var(--accent-pink)" class="country-marker pakistan-marker" 
-                                            data-country="pakistan" stroke="#fff" stroke-width="2"/>
-                                    <circle cx="495" cy="140" r="8" fill="var(--accent-pink)" class="country-marker bosnia-marker" 
-                                            data-country="bosnia" stroke="#fff" stroke-width="2"/>
-                                    <circle cx="150" cy="170" r="8" fill="var(--accent-pink)" class="country-marker oklahoma-marker" 
-                                            data-country="oklahoma" stroke="#fff" stroke-width="2"/>
+                                    <circle cx="800" cy="140" r="10" fill="var(--accent-pink)" class="country-marker pakistan-marker" 
+                                            data-country="pakistan" stroke="#fff" stroke-width="3"/>
+                                    <circle cx="540" cy="150" r="10" fill="var(--accent-pink)" class="country-marker bosnia-marker" 
+                                            data-country="bosnia" stroke="#fff" stroke-width="3"/>
+                                    <circle cx="200" cy="180" r="10" fill="var(--accent-pink)" class="country-marker oklahoma-marker" 
+                                            data-country="oklahoma" stroke="#fff" stroke-width="3"/>
                                 </svg>
                                 
                                 <!-- Flying plane that follows the path -->

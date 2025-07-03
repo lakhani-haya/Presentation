@@ -293,33 +293,24 @@ body {
     left: 0;
 }
 
-.continent-block {
-    transition: var(--transition-fast);
-    cursor: pointer;
-}
-
-.continent-block:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
-}
-
-.continent-block polygon:first-child {
+.map-svg path {
     transition: var(--transition-fast);
 }
 
-.continent-block:hover polygon:first-child {
-    fill: #6a6a6a;
+.map-svg path:hover {
+    fill: rgba(100, 100, 100, 0.8);
+    stroke: rgba(200, 200, 200, 1);
 }
 
 #flight-path {
-    stroke-dasharray: 15,8;
+    stroke-dasharray: 20,10;
     animation: dashMove 4s linear infinite;
     filter: drop-shadow(0 0 8px var(--accent-pink));
 }
 
 @keyframes dashMove {
     to {
-        stroke-dashoffset: -23;
+        stroke-dashoffset: -30;
     }
 }
 
@@ -327,12 +318,12 @@ body {
     animation: pulse 2s ease-in-out infinite;
     cursor: pointer;
     transition: var(--transition-fast);
-    filter: drop-shadow(0 0 8px var(--accent-pink));
+    filter: drop-shadow(0 0 10px var(--accent-pink));
 }
 
 .country-marker:hover {
-    r: 12;
-    filter: drop-shadow(0 0 15px var(--accent-pink));
+    r: 15;
+    filter: drop-shadow(0 0 20px var(--accent-pink));
 }
 
 @keyframes pulse {
@@ -342,7 +333,7 @@ body {
     }
     50% {
         opacity: 0.7;
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
 }
 
@@ -350,33 +341,38 @@ body {
     position: absolute;
     font-size: 2.5rem;
     z-index: 10;
-    animation: flyAlongPath 10s ease-in-out infinite;
+    animation: flyAlongPath 12s ease-in-out infinite;
     filter: drop-shadow(0 4px 12px rgba(255, 105, 180, 0.8));
     transform-origin: center;
 }
 
 @keyframes flyAlongPath {
     0% {
-        left: 75%;
-        top: 37.5%;
-        transform: rotate(-135deg);
+        left: 80%;
+        top: 28%;
+        transform: rotate(-45deg);
         opacity: 0;
     }
     10% {
         opacity: 1;
     }
-    50% {
-        left: 49.5%;
-        top: 35%;
-        transform: rotate(-15deg);
+    45% {
+        left: 54%;
+        top: 30%;
+        transform: rotate(-25deg);
     }
-    90% {
+    50% {
+        left: 54%;
+        top: 30%;
+        transform: rotate(-25deg);
+    }
+    85% {
         opacity: 1;
     }
     100% {
-        left: 15%;
-        top: 42.5%;
-        transform: rotate(-10deg);
+        left: 20%;
+        top: 36%;
+        transform: rotate(-15deg);
         opacity: 0;
     }
 }
@@ -481,26 +477,31 @@ body {
     
     @keyframes flyAlongPath {
         0% {
-            left: 75%;
-            top: 35%;
-            transform: rotate(-135deg);
+            left: 80%;
+            top: 25%;
+            transform: rotate(-45deg);
             opacity: 0;
         }
         10% {
             opacity: 1;
         }
-        50% {
-            left: 49.5%;
-            top: 32%;
-            transform: rotate(-15deg);
+        45% {
+            left: 54%;
+            top: 27%;
+            transform: rotate(-25deg);
         }
-        90% {
+        50% {
+            left: 54%;
+            top: 27%;
+            transform: rotate(-25deg);
+        }
+        85% {
             opacity: 1;
         }
         100% {
-            left: 15%;
-            top: 40%;
-            transform: rotate(-10deg);
+            left: 20%;
+            top: 33%;
+            transform: rotate(-15deg);
             opacity: 0;
         }
     }
