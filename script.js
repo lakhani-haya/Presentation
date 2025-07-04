@@ -65,6 +65,11 @@ class SmoothScrollAnimations {
         if (section.classList.contains('academic-section')) {
             this.animateAcademicTimeline(section);
         }
+
+        // Special animation for projects section
+        if (section.classList.contains('projects-section')) {
+            this.animateProjectCards(section);
+        }
     }
 
     animateSnapshot(section) {
@@ -122,6 +127,45 @@ class SmoothScrollAnimations {
             marker.style.fill = 'var(--accent-pink)';
             marker.style.transform = 'scale(1)';
         }
+    }
+
+    animateProjectCards(section) {
+        const projectCards = section.querySelectorAll('.project-card');
+        const projectIcons = section.querySelectorAll('.project-icon');
+        
+        // Reset animations first
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+        });
+
+        // Animate each card with staggered delay
+        projectCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.transition = 'all 0.8s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                
+                // Add special effect to project icon
+                const projectIcon = projectIcons[index];
+                if (projectIcon) {
+                    projectIcon.style.animation = 'iconBounce 0.6s ease forwards';
+                }
+            }, index * 200 + 300); // Staggered timing
+        });
+
+        // Add enhanced hover effects
+        projectCards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) scale(1.02)';
+                projectIcons[index].style.transform = 'scale(1.2) rotate(10deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                projectIcons[index].style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
     }
 
     focusOnCountry(marker, index) {
