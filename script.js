@@ -60,6 +60,11 @@ class SmoothScrollAnimations {
         if (section.classList.contains('about-section')) {
             this.animateSnapshot(section);
         }
+
+        // Special animation for academic section
+        if (section.classList.contains('academic-section')) {
+            this.animateAcademicTimeline(section);
+        }
     }
 
     animateSnapshot(section) {
