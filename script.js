@@ -70,6 +70,11 @@ class SmoothScrollAnimations {
         if (section.classList.contains('projects-section')) {
             this.animateProjectCards(section);
         }
+
+        // Special animation for skills section
+        if (section.classList.contains('skills-section')) {
+            this.animateSkillsSection(section);
+        }
     }
 
     animateSnapshot(section) {
@@ -164,6 +169,53 @@ class SmoothScrollAnimations {
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
                 projectIcons[index].style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    }
+
+    animateSkillsSection(section) {
+        const techCategories = section.querySelectorAll('.tech-category');
+        const techBlocks = section.querySelectorAll('.tech-block');
+        const skillBubbles = section.querySelectorAll('.skill-bubble');
+        
+        // Reset animations first
+        techCategories.forEach(category => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(50px)';
+        });
+
+        // Animate tech categories
+        techCategories.forEach((category, index) => {
+            setTimeout(() => {
+                category.style.transition = 'all 0.8s ease';
+                category.style.opacity = '1';
+                category.style.transform = 'translateY(0)';
+            }, index * 200 + 300);
+        });
+
+        // Add hover effects for tech blocks
+        techBlocks.forEach(block => {
+            block.addEventListener('mouseenter', () => {
+                block.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            
+            block.addEventListener('mouseleave', () => {
+                block.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add interactive effects for skill bubbles
+        skillBubbles.forEach((bubble, index) => {
+            bubble.addEventListener('mouseenter', () => {
+                // Pause floating animation temporarily
+                bubble.style.animationPlayState = 'paused';
+                bubble.style.transform = 'scale(1.15)';
+            });
+            
+            bubble.addEventListener('mouseleave', () => {
+                // Resume floating animation
+                bubble.style.animationPlayState = 'running';
+                bubble.style.transform = 'scale(1)';
             });
         });
     }
