@@ -1033,19 +1033,33 @@ body {
     backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: categorySlideIn 0.8s ease forwards;
+    /* Make visible by default and animate when parent section is visible */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.tech-category:nth-child(1) { animation-delay: 0.2s; }
-.tech-category:nth-child(2) { animation-delay: 0.4s; }
-.tech-category:nth-child(3) { animation-delay: 0.6s; }
-.tech-category:nth-child(4) { animation-delay: 0.8s; }
-.tech-category:nth-child(5) { animation-delay: 1.0s; }
-.tech-category:nth-child(6) { animation-delay: 1.2s; }
-.tech-category:nth-child(7) { animation-delay: 1.4s; }
-.tech-category:nth-child(8) { animation-delay: 1.6s; }
+/* Apply entrance animation when section becomes visible */
+.skills-section:not(.visible) .tech-category {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.skills-section.visible .tech-category {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.skills-section.visible .tech-category:nth-child(1) { transition-delay: 0.2s; }
+.skills-section.visible .tech-category:nth-child(2) { transition-delay: 0.4s; }
+.skills-section.visible .tech-category:nth-child(3) { transition-delay: 0.6s; }
+.skills-section.visible .tech-category:nth-child(4) { transition-delay: 0.8s; }
+.skills-section.visible .tech-category:nth-child(5) { transition-delay: 1.0s; }
+.skills-section.visible .tech-category:nth-child(6) { transition-delay: 1.2s; }
+.skills-section.visible .tech-category:nth-child(7) { transition-delay: 1.4s; }
+.skills-section.visible .tech-category:nth-child(8) { transition-delay: 1.6s; }
+
+
 
 @keyframes categorySlideIn {
     to {
