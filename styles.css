@@ -1041,6 +1041,11 @@ body {
 .tech-category:nth-child(1) { animation-delay: 0.2s; }
 .tech-category:nth-child(2) { animation-delay: 0.4s; }
 .tech-category:nth-child(3) { animation-delay: 0.6s; }
+.tech-category:nth-child(4) { animation-delay: 0.8s; }
+.tech-category:nth-child(5) { animation-delay: 1.0s; }
+.tech-category:nth-child(6) { animation-delay: 1.2s; }
+.tech-category:nth-child(7) { animation-delay: 1.4s; }
+.tech-category:nth-child(8) { animation-delay: 1.6s; }
 
 @keyframes categorySlideIn {
     to {
