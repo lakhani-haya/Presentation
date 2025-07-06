@@ -602,26 +602,6 @@ body {
     padding: 2rem 0;
 }
 
-.academic-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--accent-pink) 0%, rgba(255, 105, 180, 0.3) 100%);
-    transform: translateX(-50%);
-    animation: timelineGrow 2s ease-out forwards;
-    transform-origin: top;
-    scale: 1 0;
-}
-
-@keyframes timelineGrow {
-    to {
-        scale: 1 1;
-    }
-}
-
 .timeline-step {
     display: flex;
     align-items: center;
@@ -734,13 +714,9 @@ body {
 
 /* Responsive design for academic timeline */
 @media (max-width: 768px) {
-    .academic-timeline::before {
-        left: 30px;
-    }
-    
     .timeline-step {
         flex-direction: row !important;
-        margin-left: 60px;
+        margin-left: 0;
     }
     
     .timeline-step:nth-child(even) {
@@ -748,9 +724,9 @@ body {
     }
     
     .step-marker {
-        position: absolute;
-        left: -90px;
-        margin: 0;
+        position: relative;
+        left: 0;
+        margin: 0 2rem;
     }
     
     .step-content {
