@@ -174,24 +174,18 @@ class SmoothScrollAnimations {
     }
 
     animateSkillsSection(section) {
-        const techCategories = section.querySelectorAll('.tech-category');
-        const techBlocks = section.querySelectorAll('.tech-block');
+        const skillCategories = section.querySelectorAll('.skill-category');
+        const skillItems = section.querySelectorAll('.skill-item');
         const skillBubbles = section.querySelectorAll('.skill-bubble');
         
-        // Trigger CSS animations by adding a class
-        section.classList.add('skills-animated');
-        
-        // Let CSS animations handle the entrance effects
-        // The categories already have CSS animations set up
-
-        // Add hover effects for tech blocks
-        techBlocks.forEach(block => {
-            block.addEventListener('mouseenter', () => {
-                block.style.transform = 'translateY(-5px) scale(1.1)';
+        // Add hover effects for skill items
+        skillItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-3px) scale(1.1)';
             });
             
-            block.addEventListener('mouseleave', () => {
-                block.style.transform = 'translateY(0) scale(1)';
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0) scale(1)';
             });
         });
 
