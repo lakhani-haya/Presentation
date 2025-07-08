@@ -1014,114 +1014,92 @@ body {
     background-clip: text;
 }
 
-/* Skills Grid */
-.skills-grid {
+/* Skills Container - Simple Layout */
+.skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+}
+
+.skills-column {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 4rem;
 }
 
-.skill-category {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+.skill-group {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
     padding: 2rem;
-    text-align: center;
-    border: 1px solid rgba(255, 105, 180, 0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    transition: all 0.3s ease;
     opacity: 0;
-    transform: translateY(50px);
-    animation: skillReveal 0.8s ease forwards;
+    transform: translateY(30px);
+    animation: skillGroupReveal 0.6s ease forwards;
 }
 
-.skill-category:nth-child(1) { animation-delay: 0.2s; }
-.skill-category:nth-child(2) { animation-delay: 0.4s; }
-.skill-category:nth-child(3) { animation-delay: 0.6s; }
-.skill-category:nth-child(4) { animation-delay: 0.8s; }
-.skill-category:nth-child(5) { animation-delay: 1.0s; }
-.skill-category:nth-child(6) { animation-delay: 1.2s; }
-.skill-category:nth-child(7) { animation-delay: 1.4s; }
-.skill-category:nth-child(8) { animation-delay: 1.6s; }
+.skill-group:nth-child(1) { animation-delay: 0.2s; }
+.skill-group:nth-child(2) { animation-delay: 0.4s; }
+.skills-column:nth-child(2) .skill-group:nth-child(1) { animation-delay: 0.6s; }
+.skills-column:nth-child(2) .skill-group:nth-child(2) { animation-delay: 0.8s; }
 
-@keyframes skillReveal {
+@keyframes skillGroupReveal {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.skill-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.1), transparent);
-    transition: left 0.8s ease;
+.skill-group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 105, 180, 0.3);
 }
 
-.skill-category:hover::before {
-    left: 100%;
-}
-
-.skill-category:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255, 105, 180, 0.4);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 105, 180, 0.2);
-}
-
-.skill-icon {
-    font-size: 3rem;
+.skill-group-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 1.5rem;
-    display: block;
-    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.3));
-    transition: all 0.3s ease;
 }
 
-.skill-category:hover .skill-icon {
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.6));
+.skill-group-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3));
 }
 
-.skill-category h3 {
-    font-size: 1.3rem;
+.skill-group h3 {
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-white);
-    margin-bottom: 1.5rem;
+    color: var(--gray-dark);
+    margin: 0;
 }
 
-.skill-list {
+.skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
+    gap: 0.75rem;
 }
 
-.skill-item {
+.skill-tag {
     background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    border-radius: 15px;
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    border-radius: 12px;
     padding: 0.5rem 1rem;
-    color: var(--gray-light);
-    font-size: 0.8rem;
+    color: var(--gray-dark);
+    font-size: 0.85rem;
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.skill-item:hover {
+.skill-tag:hover {
     background: linear-gradient(135deg, rgba(255, 105, 180, 0.2) 0%, rgba(255, 105, 180, 0.1) 100%);
-    border-color: rgba(255, 105, 180, 0.6);
-    color: var(--accent-pink);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    border-color: rgba(255, 105, 180, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
 }
 
 /* Soft Skills Floating Bubbles */
