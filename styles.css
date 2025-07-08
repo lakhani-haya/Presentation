@@ -879,7 +879,7 @@ body {
 
 .project-description {
     font-size: 1rem;
-    color: var(--text-medium);
+    color: var(--gray-light);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -969,7 +969,7 @@ body {
 
 /* Skills Section */
 .skills-section {
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 50%, var(--tertiary-black) 100%);
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 50%, #0a0a0a 100%);
     position: relative;
     overflow: hidden;
 }
