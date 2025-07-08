@@ -52,6 +52,15 @@ body {
     border-bottom: 1px solid var(--gray-dark);
 }
 
+/* Alternating section backgrounds */
+.section:nth-child(even) {
+    background: var(--tertiary-black);
+}
+
+.section:nth-child(odd) {
+    background: var(--secondary-black);
+}
+
 .section.visible {
     opacity: 1;
     transform: translateY(0);
@@ -886,7 +895,7 @@ body {
 
 .project-description {
     font-size: 1rem;
-    color: var(--gray-light);
+    color: var(--text-medium);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -976,7 +985,7 @@ body {
 
 /* Skills Section */
 .skills-section {
-    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 50%, #0a0a0a 100%);
+    background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 50%, var(--tertiary-black) 100%);
     position: relative;
     overflow: hidden;
 }
