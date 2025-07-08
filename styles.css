@@ -5,18 +5,13 @@
 }
 
 :root {
-    --primary-black: #0a0a0a;
-    --secondary-black: #1a1a1a;
-    --tertiary-black: #2a2a2a;
+    --primary-black: #000000;
     --primary-white: #ffffff;
-    --text-light: #e0e0e0;
-    --text-medium: #b0b0b0;
-    --text-dark: #808080;
     --accent-pink: #ff69b4;
-    --soft-pink: #ff8cc8;
-    --gray-light: #404040;
-    --gray-medium: #606060;
-    --gray-dark: #303030;
+    --soft-pink: #ffc0cb;
+    --gray-light: #f5f5f5;
+    --gray-medium: #666666;
+    --gray-dark: #333333;
     --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -28,8 +23,8 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text-light);
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 50%, var(--primary-black) 100%);
+    color: var(--primary-black);
+    background: var(--primary-white);
     overflow-x: hidden;
 }
 
@@ -48,17 +43,6 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: var(--transition-smooth);
-    background: var(--secondary-black);
-    border-bottom: 1px solid var(--gray-dark);
-}
-
-/* Alternating section backgrounds */
-.section:nth-child(even) {
-    background: var(--tertiary-black);
-}
-
-.section:nth-child(odd) {
-    background: var(--secondary-black);
 }
 
 .section.visible {
@@ -92,7 +76,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 50%, var(--tertiary-black) 100%);
+    background: linear-gradient(135deg, var(--primary-white) 0%, var(--gray-light) 100%);
     text-align: center;
 }
 
@@ -108,8 +92,8 @@ body {
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--accent-pink);
-    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+    border: 4px solid var(--primary-white);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     transition: var(--transition-smooth);
     position: relative;
 }
@@ -1041,12 +1025,12 @@ body {
 }
 
 .skill-category {
-    background: rgba(42, 42, 42, 0.8);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -1088,9 +1072,9 @@ body {
 
 .skill-category:hover {
     transform: translateY(-10px);
-    border-color: rgba(255, 105, 180, 0.6);
-    background: rgba(42, 42, 42, 0.95);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 105, 180, 0.4);
+    border-color: rgba(255, 105, 180, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 105, 180, 0.2);
 }
 
 .skill-icon {
