@@ -1106,6 +1106,8 @@ body {
 .soft-skills-section {
     text-align: center;
     position: relative;
+    margin-bottom: 6rem;
+    padding-bottom: 4rem;
 }
 
 .soft-skills-title {
