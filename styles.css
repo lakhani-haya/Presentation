@@ -802,11 +802,11 @@ body {
 }
 
 .project-card {
-    background: rgba(42, 42, 42, 0.8);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     padding: 2rem;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -844,9 +844,9 @@ body {
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(255, 105, 180, 0.6);
-    background: rgba(42, 42, 42, 0.95);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 105, 180, 0.4);
+    border-color: rgba(255, 105, 180, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 105, 180, 0.2);
 }
 
 .project-icon {
