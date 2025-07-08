@@ -695,7 +695,7 @@ body {
 
 .step-description {
     font-size: 1rem;
-    color: var(--text-medium);
+    color: var(--gray-light);
     line-height: 1.6;
 }
 
