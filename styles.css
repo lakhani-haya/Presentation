@@ -1160,6 +1160,12 @@ body {
 .bubble-3 { 
     animation: bubbleFloat 1s ease 1.6s forwards, float3 8s ease-in-out infinite 2.6s;
 }
+.bubble-4 { 
+    animation: bubbleFloat 1s ease 1.8s forwards, float4 6.5s ease-in-out infinite 2.8s;
+}
+.bubble-5 { 
+    animation: bubbleFloat 1s ease 2.0s forwards, float5 7.5s ease-in-out infinite 3.0s;
+}
 
 @keyframes bubbleFloat {
     to {
