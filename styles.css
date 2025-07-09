@@ -1315,8 +1315,10 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 100%;
+    height: calc(100% - 2rem);
+    top: 1rem;
     background: linear-gradient(to bottom, var(--accent-pink), var(--primary-black), var(--accent-pink));
+    z-index: 1;
 }
 
 .timeline-item {
@@ -1324,6 +1326,7 @@ body {
     align-items: center;
     margin-bottom: 4rem;
     position: relative;
+    z-index: 2;
 }
 
 .timeline-item:nth-child(even) {
