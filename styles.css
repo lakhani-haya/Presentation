@@ -1358,7 +1358,8 @@ body {
 
 .timeline-content {
     flex: 1;
-    padding: 0 3rem;
+    padding: 0 5rem;
+    max-width: 350px;
 }
 
 .timeline-content h3 {
