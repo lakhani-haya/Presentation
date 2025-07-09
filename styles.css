@@ -1331,6 +1331,7 @@ body {
 
 .timeline-item:nth-child(even) {
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
