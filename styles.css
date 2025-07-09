@@ -1329,13 +1329,14 @@ body {
     justify-content: space-between;
 }
 
-.timeline-item:nth-child(even) {
-    flex-direction: row-reverse;
-    justify-content: center;
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: right;
+    margin-left: auto;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    text-align: right;
+    text-align: left;
+    margin-right: auto;
 }
 
 .timeline-year {
@@ -1358,9 +1359,8 @@ body {
 }
 
 .timeline-content {
-    flex: 1;
-    padding: 0 5rem;
-    max-width: 350px;
+    width: 45%;
+    padding: 0 2rem;
 }
 
 .timeline-content h3 {
