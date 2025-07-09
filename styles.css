@@ -1326,6 +1326,7 @@ body {
     margin-bottom: 4rem;
     position: relative;
     z-index: 2;
+    justify-content: center;
 }
 
 .timeline-item:nth-child(even) {
@@ -1356,8 +1357,8 @@ body {
 
 .timeline-content {
     flex: 1;
-    padding: 0 3rem;
-    max-width: 400px;
+    padding: 0 4rem;
+    max-width: 350px;
 }
 
 .timeline-content h3 {
