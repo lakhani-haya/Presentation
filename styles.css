@@ -1489,6 +1489,10 @@ body {
         padding: 0 1rem;
     }
     
+    .section-content {
+        padding: 3rem 0;
+    }
+    
     .main-quote p::before,
     .main-quote p::after {
         display: none;
