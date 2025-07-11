@@ -876,6 +876,7 @@ body {
 }
 
 .project-title {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-white);
@@ -883,6 +884,7 @@ body {
 }
 
 .project-example {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--accent-pink);
