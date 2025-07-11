@@ -53,6 +53,7 @@ body {
 .section-content {
     width: 100%;
     text-align: center;
+    padding: 4rem 0;
 }
 
 .section-title {
@@ -582,6 +583,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 4rem;
+    margin-top: 2rem;
 }
 
 .academic-icon {
