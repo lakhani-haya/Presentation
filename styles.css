@@ -1484,14 +1484,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--primary-white) 0%, #f8f9fa 100%);
-    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--accent-pink) 0%, #3a7bc8 100%);
+    border: 2px solid var(--accent-pink);
     border-radius: 15px;
     text-decoration: none;
-    color: var(--primary-black);
+    color: white;
     font-weight: 500;
     transition: var(--transition-fast);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -1511,55 +1511,15 @@ body {
     left: 100%;
 }
 
-/* Email Button - Blue Theme */
-.contact-link[href*="mailto"] {
-    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-    color: white;
-    border-color: #4285f4;
-}
-
-.contact-link[href*="mailto"]:hover {
-    background: linear-gradient(135deg, #3367d6 0%, #2d8a47 100%);
+.contact-link:hover {
+    background: linear-gradient(135deg, #3a7bc8 0%, #2a5a9a 100%);
     transform: translateX(10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(66, 133, 244, 0.3);
+    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.4);
 }
 
-.contact-link[href*="mailto"] .arrow {
+.contact-link .arrow {
     color: rgba(255, 255, 255, 0.9);
-}
-
-/* LinkedIn Button - LinkedIn Blue */
-.contact-link[href*="linkedin"] {
-    background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
-    color: white;
-    border-color: #0077b5;
-}
-
-.contact-link[href*="linkedin"]:hover {
-    background: linear-gradient(135deg, #005885 0%, #004065 100%);
-    transform: translateX(10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 119, 181, 0.4);
-}
-
-.contact-link[href*="linkedin"] .arrow {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* GitHub Button - Dark Theme */
-.contact-link[href*="github"] {
-    background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
-    color: white;
-    border-color: #24292e;
-}
-
-.contact-link[href*="github"]:hover {
-    background: linear-gradient(135deg, #1a1e22 0%, #0d1117 100%);
-    transform: translateX(10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(36, 41, 46, 0.4);
-}
-
-.contact-link[href*="github"] .arrow {
-    color: rgba(255, 255, 255, 0.9);
+    transition: var(--transition-fast);
 }
 
 .contact-link:hover .arrow {
