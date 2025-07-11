@@ -602,7 +602,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0;
 }
 
 .timeline-step {
