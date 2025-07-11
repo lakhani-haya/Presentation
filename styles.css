@@ -686,6 +686,7 @@ body {
 }
 
 .step-title {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-white);
@@ -693,6 +694,7 @@ body {
 }
 
 .step-location {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--accent-pink);
@@ -703,6 +705,7 @@ body {
 }
 
 .step-description {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
     color: var(--gray-light);
     line-height: 1.6;
@@ -795,10 +798,11 @@ body {
 }
 
 .projects-subtitle p {
+    font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     color: var(--gray-light);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .projects-grid {
