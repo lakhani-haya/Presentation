@@ -871,19 +871,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 105, 180, 0.2);
 }
 
-.project-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    display: block;
-    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.3));
-    transition: all 0.3s ease;
-}
-
-.project-card:hover .project-icon {
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.6));
-}
-
 .project-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
