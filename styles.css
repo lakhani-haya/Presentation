@@ -834,6 +834,7 @@ body {
 .project-card:nth-child(4) { animation-delay: 0.8s; }
 .project-card:nth-child(5) { animation-delay: 1.0s; }
 .project-card:nth-child(6) { animation-delay: 1.2s; }
+.project-card:nth-child(7) { animation-delay: 1.4s; }
 
 @keyframes projectReveal {
     to {
