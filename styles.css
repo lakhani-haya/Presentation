@@ -87,6 +87,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding-bottom: 6rem; /* Add padding to prevent overlap with scroll indicator */
 }
 
 .profile-image {
@@ -151,10 +152,11 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem; /* Increased from 2rem to provide more space */
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 10; /* Ensure it stays above other elements */
 }
 
 .scroll-arrow {
