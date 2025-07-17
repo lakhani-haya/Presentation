@@ -161,7 +161,7 @@ body {
 
 .scroll-arrow {
     width: 2px;
-    height: 40px;
+    height: 28px; /* Reduced from 40px to make it shorter */
     background: var(--accent-pink);
     position: relative;
 }
