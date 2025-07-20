@@ -716,14 +716,14 @@ body {
 
 @keyframes stepGlow {
     0% {
-        box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
     }
     50% {
-        box-shadow: 0 0 50px rgba(255, 105, 180, 1), 0 0 80px rgba(255, 105, 180, 0.4);
+        box-shadow: 0 0 50px rgba(6, 182, 212, 1), 0 0 80px rgba(6, 182, 212, 0.4);
         transform: scale(1.1);
     }
     100% {
-        box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
         transform: scale(1);
     }
 }
