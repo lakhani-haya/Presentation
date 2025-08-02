@@ -609,16 +609,16 @@ body {
 }
 
 .academic-timeline {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
-    padding: 2rem 0 4rem 0;
+    padding: 1.5rem 0 3rem 0;
 }
 
 .timeline-step {
     display: flex;
     align-items: center;
-    margin: 3rem 0;
+    margin: 2rem 0;
     opacity: 0;
     transform: translateY(50px);
     animation: stepReveal 0.8s ease forwards;
@@ -647,22 +647,22 @@ body {
 .step-marker {
     position: relative;
     z-index: 2;
-    margin: 0 2rem;
+    margin: 0 1.5rem;
     flex-shrink: 0;
 }
 
 .step-number {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-pink) 0%, #0891b2 100%);
     color: var(--primary-white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
     transition: all 0.3s ease;
 }
 
