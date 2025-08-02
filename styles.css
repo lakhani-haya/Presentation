@@ -690,10 +690,10 @@ body {
 
 .step-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--primary-white);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .step-location {
