@@ -714,6 +714,41 @@ body {
     line-height: 1.5;
 }
 
+/* Academic step image hover effect */
+.step-image-container {
+    position: absolute;
+    top: 50%;
+    right: -120px;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.step-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.step-content:hover .step-image-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* For even numbered steps (right-aligned), show image on the left */
+.timeline-step:nth-child(even) .step-image-container {
+    right: auto;
+    left: -120px;
+}
+
 @keyframes stepGlow {
     0% {
         box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
