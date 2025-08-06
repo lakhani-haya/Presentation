@@ -728,8 +728,8 @@ body {
 }
 
 .step-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 12px;
     border: 2px solid rgba(6, 182, 212, 0.3);
