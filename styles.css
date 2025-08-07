@@ -718,7 +718,7 @@ body {
 .step-image-container {
     position: absolute;
     top: 50%;
-    right: -145px;
+    right: -220px;
     transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
@@ -746,7 +746,7 @@ body {
 /* For even numbered steps (right-aligned), show image on the left */
 .timeline-step:nth-child(even) .step-image-container {
     right: auto;
-    left: -145px;
+    left: -220px;
 }
 
 @keyframes stepGlow {
