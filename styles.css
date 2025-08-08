@@ -940,7 +940,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--primary-black);
+    color: var(--primary-white);
     margin-bottom: 0.3rem;
 }
 
@@ -955,7 +955,7 @@ body {
 .experience-description {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
-    color: var(--gray-dark);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -969,7 +969,7 @@ body {
 .experience-highlights li {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.95rem;
-    color: var(--gray-dark);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.5;
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
