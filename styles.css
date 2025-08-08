@@ -719,7 +719,7 @@ body {
 /* Academic step image hover effect */
 .step-image-container {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: -220px;
     transform: translateY(-50%);
     opacity: 0;
