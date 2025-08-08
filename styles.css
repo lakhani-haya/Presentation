@@ -797,7 +797,7 @@ body {
 
 /* Experience Section */
 .experience-section {
-    background: linear-gradient(135deg, var(--primary-white) 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, #020617 0%, var(--primary-black) 50%, #0c1426 100%);
     position: relative;
     overflow: hidden;
 }
