@@ -718,7 +718,10 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.95rem;
     color: var(--gray-light);
-    line-height: 1.5;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
 /* Academic step image hover effect */
