@@ -1,4 +1,4 @@
-// Smooscroll animations and interactions
+// Smoscroll animations and interactions
 class SmoothScrollAnimations {
     constructor() {
         this.sections = document.querySelectorAll('.section');
