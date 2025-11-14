@@ -44,7 +44,7 @@ class SmoothScrollAnimations {
     }
 
     animateSection(section) {
-        // Animate elements within the section with staggered dela
+        // Animate elements within the section with staggered del
         const animatableElements = section.querySelectorAll(
             '.skill-category, .timeline-item, .value-item, .stat-item, .contact-link'
         );
