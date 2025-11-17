@@ -15,7 +15,7 @@ class SmoothScrollAnimations {
         this.setupParallaxEffects();
         this.setupTypingEffect();
         
-        // Show first section imme
+        // Show first section imm
         if (this.sections.length > 0) {
             this.sections[0].classList.add('visible');
         }
