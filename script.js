@@ -317,13 +317,28 @@ class SmoothScrollAnimations {
     setupTypingEffect() {
         // Add typing effect to hero tagline
         const tagline = document.querySelector('.hero-tagline');
+        const resumeLink = document.querySelector('.resume-link');
+        const speed = 100;
+        let delay = 1000;
+
         if (tagline) {
             const text = tagline.textContent;
             tagline.textContent = '';
-            
+
             setTimeout(() => {
-                this.typeText(tagline, text, 100);
-            }, 1000);
+                this.typeText(tagline, text, speed);
+            }, delay);
+
+            delay += text.length * speed + 400;
+        }
+
+        if (resumeLink) {
+            const resumeText = resumeLink.textContent;
+            resumeLink.textContent = '';
+
+            setTimeout(() => {
+                this.typeText(resumeLink, resumeText, speed);
+            }, delay);
         }
     }
 
@@ -578,7 +593,8 @@ style.textContent = `
         }
     }
     
-    .hero-tagline {
+    .hero-tagline,
+    .resume-link {
         border-right: 2px solid #ff69b4;
         white-space: nowrap;
         overflow: hidden;

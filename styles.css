@@ -28,6 +28,64 @@ body {
     overflow-x: hidden;
 }
 
+.nav-hover {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 6px;
+}
+
+.hamburger {
+    width: 28px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: var(--primary-black);
+    border-radius: 2px;
+}
+
+.hover-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none;
+    min-width: 220px;
+}
+
+.hover-menu a {
+    display: block;
+    padding: 6px 4px;
+    color: var(--primary-black);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.hover-menu a:hover {
+    color: var(--accent-pink);
+}
+
+.nav-hover:hover .hover-menu {
+    display: block;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -149,6 +207,22 @@ body {
     color: var(--gray-medium);
     letter-spacing: 0.15em;
     text-transform: uppercase;
+}
+
+.resume-link {
+    margin-top: 1rem;
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-pink);
+    text-decoration: none;
+}
+
+.resume-link:hover {
+    color: var(--soft-pink);
 }
 
 .scroll-indicator {
