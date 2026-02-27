@@ -237,7 +237,7 @@ body {
 .scroll-arrow {
     width: 2px;
     height: 28px; /* Reduced from 40px to make it shorter */
-    background: var(--accent-pink);
+    background: var(--gray-medium);
     position: relative;
 }
 
@@ -248,8 +248,8 @@ body {
     left: -5px;
     width: 12px;
     height: 12px;
-    border-right: 2px solid var(--accent-pink);
-    border-bottom: 2px solid var(--accent-pink);
+    border-right: 2px solid var(--gray-medium);
+    border-bottom: 2px solid var(--gray-medium);
     transform: rotate(45deg);
 }
 
