@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-black: #0f172a;
+    --primary-black: #1f2937;
     --primary-white: #ffffff;
-    --accent-pink: #06b6d4;
-    --soft-pink: #67e8f9;
-    --gray-light: #f8fafc;
-    --gray-medium: #64748b;
-    --gray-dark: #1e293b;
+    --accent-pink: #7c9cff;
+    --soft-pink: #c7d2fe;
+    --gray-light: #f6f7fb;
+    --gray-medium: #6b7280;
+    --gray-dark: #374151;
     --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
